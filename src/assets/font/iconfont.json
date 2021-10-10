@@ -1,0 +1,23 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "24470272",
+      "name": "像素_武器",
+      "font_class": "xiangsu_wuqi",
+      "unicode": "ed22",
+      "unicode_decimal": 60706
+    },
+    {
+      "icon_id": "24470277",
+      "name": "像素_游戏机",
+      "font_class": "xiangsu_youxiji",
+      "unicode": "ed27",
+      "unicode_decimal": 60711
+    }
+  ]
+}
