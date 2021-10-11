@@ -12,7 +12,14 @@ const routes = [{
   component: () => import('../components/Login.vue')
 },{
   path:'/home',
-  component:() => import('../components/Home.vue')
+  component:() => import('../components/Home.vue'),
+  redirect:'/welcome',
+  children:[
+    {
+      path:'/welcome',
+      component:() => import('../components/Welcome.vue')
+    }
+  ]
 }]
 
 const router = new VueRouter({

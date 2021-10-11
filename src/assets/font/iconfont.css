@@ -1,6 +1,8 @@
 @font-face {
-  font-family: "iconfont"; /* Project id  */
-  src: url('iconfont.ttf?t=1633852523519') format('truetype');
+  font-family: "iconfont"; /* Project id 2778449 */
+  src: url('iconfont.woff2?t=1633943606387') format('woff2'),
+       url('iconfont.woff?t=1633943606387') format('woff'),
+       url('iconfont.ttf?t=1633943606387') format('truetype');
 }
 
 .iconfont {
@@ -11,11 +13,27 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-xiangsu_wuqi:before {
-  content: "\ed22";
+.icongouwuche_jianyifankui:before {
+  content: "\e60e";
 }
 
-.icon-xiangsu_youxiji:before {
-  content: "\ed27";
+.iconico08:before {
+  content: "\e609";
+}
+
+.iconico06:before {
+  content: "\e608";
+}
+
+.icongouwuche_yongjin:before {
+  content: "\e60d";
+}
+
+.icontongji-copy-copy:before {
+  content: "\e624";
+}
+
+.iconyemianxiafangicon_jianguanpingtai-copy:before {
+  content: "\e628";
 }
 
