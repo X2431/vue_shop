@@ -18,6 +18,12 @@ const routes = [{
     {
       path:'/welcome',
       component:() => import('../components/Welcome.vue')
+    },{
+      path:'/users',
+      component:() => import('../components/user/User.vue')
+    },{
+      path:'/roles',
+      component:() => import('../components/roles/Roles.vue')
     }
   ]
 }]

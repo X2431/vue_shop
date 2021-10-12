@@ -17,7 +17,7 @@
           <p v-else><<==</p>
           </div> <!-- 侧边栏菜单区 -->
             <el-menu background-color="#333744" text-color="#fff" active-text-color="orange" 
-              unique-opened :collapse='collapse' :collapse-transition="false" router>
+              unique-opened :collapse='collapse' :collapse-transition="false" router :default-active="activePath">
               <!-- 一级菜单 -->
               <el-submenu :index="item.id+''" v-for="item in menuList" :key="item.id">
                 <!-- 一级菜单模板内容 -->
@@ -28,7 +28,8 @@
                   <span>{{item.authName}}</span>
                 </template>
                 <!-- 二级菜单 -->
-                <el-menu-item :index="'/'+subItem.path" v-for="subItem in item.children" :key="subItem.id">
+                <el-menu-item :index="'/'+subItem.path" v-for="subItem in item.children" :key="subItem.id"
+                  @click="saveNavState('/'+subItem.path)">
                   <template slot="title">
                     <!-- 图标 -->
                     <i class="el-icon-menu"></i>
@@ -60,12 +61,14 @@
           '102': 'iconfont iconyemianxiafangicon_jianguanpingtai-copy',
           "145": 'iconfont icontongji-copy-copy'
         },
-        collapse:false 
+        collapse:false ,
+        activePath:''
       }
     },
     methods: {
       logout() {
         sessionStorage.removeItem('token')
+        sessionStorage.removeItem('activePath')
         this.$router.push('login')
       },
       getMenuList() {
@@ -83,10 +86,15 @@
       },
       fold() {
         this.collapse = !this.collapse
+      },
+      saveNavState(path){
+        this.activePath = path
+        sessionStorage.setItem('activePath',path)
       }
     },
     created() {
       this.getMenuList()
+      this.activePath = sessionStorage.getItem('activePath')
     }
   }
 
